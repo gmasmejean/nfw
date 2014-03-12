@@ -1,0 +1,15 @@
+<div id="toto" class="test">
+    <?js for(var i=0; i<app.params.length; i++): ?>
+        <div><?js echo app.params[i]; ?></div>
+    <?js endfor; ?>
+    <div id="iftester">
+        <?js var t = require('template.tpl.js'); ?>
+        <?js for( var j=0; j<6; j++ ): echo t(app); endfor; ?>
+            <?js if( app.params.length ): ?>
+            <span><?js echo 'toto'+app.params.length; ?></span>    
+            <?js else: ?>
+            <span>no params</span>
+            <?js endif; ?>
+    </div>
+</div>
+
