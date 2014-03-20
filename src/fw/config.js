@@ -64,5 +64,15 @@ var config = {
     },
     templates:{
         name:'pathToTemplate'
+    },
+    events:{
+        route:[
+            { priority:100,
+              fn: function(context,next){
+                
+                
+                
+                next();} }
+        ]
     }
 };

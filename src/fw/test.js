@@ -22,13 +22,9 @@ var server = http.createServer(function(req, res) {
     
     res.setHeader('Set-Cookie','toto=azdzadza');
     res.setHeader('Set-Cookie','totoqz=azdzadza');
-    
-  res.writeHead(200,{ 'Set-Cookie':['wow=testdecookie','wowsess=testdecookie']}); */
+    */
+  res.writeHead(200,{ 'Set-Cookie':['wow=testdecookie; Max-Age=100000;','test=zadaze; HttpOnly;','wowsess=testdecookie']});
   res.end('Salut tout le monde !');
-    
-    
-    
-    
     
 });
 server.i=0;
