@@ -71,8 +71,6 @@ fw.route.segment = function( route ){
 
 
 
-
-
 fw.handleRequest = function( req, res ){
     
     
