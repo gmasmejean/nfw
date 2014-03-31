@@ -1,5 +1,5 @@
 var conf = {
     modules: {
-        'helloworld':'helloworld'
-    } 
+        helloworld:'helloworld'
+    }
 };

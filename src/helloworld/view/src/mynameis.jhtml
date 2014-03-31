@@ -1,0 +1,1 @@
+<div>My name is <?js echo datas.firstname+' '+datas.lastname; ?></div>
