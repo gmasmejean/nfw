@@ -1,16 +1,18 @@
 
-var conf = require('application.conf.js'),
-    application = new require('application')( conf ),
-    
-    // NODE JS librairies.
-    cluster = require('cluster'),
-    nCPUs = require('os').cpus().length,
-    http = require('http');
-    
+var cluster = require('cluster'),
+    nCPUs = require('os').cpus().length;
+        
 if( cluster.isMaster ){
-    for( var i=0; i<nCPUs; i++)
+    for( var i=0; i< 1 ; i++)
         cluster.fork();
 }
-else{    
-    http.createServer( application.handle ).listen(80);
+else{
+    var conf = require('./application.conf.js'),
+    application = new (require('fwjs'))(conf);
+    
+    var http = require('http');
+    
+    console.log( application.handle );
+    
+    http.createServer( application.handle ).listen(8074);
 }
