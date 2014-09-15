@@ -1,4 +1,4 @@
-var conf = {
+module.exports = {
     modules: {
         helloworld:'helloworld'
     }

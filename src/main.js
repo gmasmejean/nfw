@@ -1,4 +1,3 @@
-
 var cluster = require('cluster'),
     nCPUs = require('os').cpus().length;
         
@@ -7,12 +6,12 @@ if( cluster.isMaster ){
         cluster.fork();
 }
 else{
-    var conf = require('./application.conf.js'),
-    application = new (require('fwjs'))(conf);
+    var application = new (require('fwjs'))('application.conf.js'),
+        http = require('http');
     
-    var http = require('http');
+    application.on('ready',function(){
+        http.createServer( application.handle ).listen(8074);
+    });
     
-    console.log( application.handle );
     
-    http.createServer( application.handle ).listen(8074);
 }
