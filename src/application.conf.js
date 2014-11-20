@@ -9,7 +9,10 @@ module.exports = {
     services:{
         session:{
             unique: true, //false,
-            service: '../node_modules/nfw/services/session/service.js'
+            adapter: '../node_modules/nfw/helpers/session/memory/adapter.js',
+            memcache:{
+                
+            },
         }
     }
 };
